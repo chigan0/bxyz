@@ -1,0 +1,135 @@
+{%extends 'left_headers.html'%}
+
+<title>{%block title%}Все объекты{%endblock%}</title>
+
+{%block content%}
+    {%load static%}
+    
+    <script type="text/javascript" src="{%static 'js/jquery/dwd.js'%}"></script>
+
+    <script type="text/javascript" src="{%static 'js/jquery/lazy.js'%}"></script>
+    
+    <section class="alert">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="filters">
+      <div class="container">
+        {%csrf_token%}
+        <div class="row filter__items align-self-center justify-content-between">
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-2 col-4">
+                   <a class="nav-link dropdown-toggle" id="oni" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Тип объекта
+                   </a>
+                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                     
+                    
+                     <a class="dropdown-item" onclick="$(document).ready(()=>{$('#oni').text('Дом');})">Дом</a>
+                     <a class="dropdown-item" onclick="$(document).ready(()=>{$('#oni').text('Квартира');})">Квартира</a>
+              <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" onclick="$(document).ready(()=>{$('#oni').text('Коммерческий объект');})">Коммерческий объект</a>
+              </div>
+          </div>
+          <div class="col-xl-2 col-lg-2 col-md-3 col-sm-3 col-4">
+                    <a class="nav-link dropdown-toggle typing" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+                      Тип сделки
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" onclick="$(document).ready(()=>{$('#navbarDropdown').text('Все');})">Все</a>
+                      <a class="dropdown-item" onclick="$(document).ready(()=>{$('#navbarDropdown').text('Аренда');})">Аренда</a>
+                      <a class="dropdown-item" onclick="$(document).ready(()=>{$('#navbarDropdown').text('Покупка');})">Покупка</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" onclick="$(document).ready(()=>{$('#navbarDropdown').text('Продажа');})">Продажа</a>
+                    </div>
+          </div>
+          <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-4 ">
+                    <a class="nav-link dropdown-toggle alls" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >Все</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" id="-1" onclick="$(document).ready(()=>{$('#navbarDropdown2').text($('#-1').text());})">Все</a>
+                      {%for i in ad%}
+                      <a class="dropdown-item" id="{{i.id}}" onclick="$(document).ready(()=>{$('#navbarDropdown2').text($('#{{i.id}}').text());})">{{i.addr}}</a>
+                    {%endfor%}
+                    </div>
+          </div>
+          <div class=" col-lg-2 col-md-3 col-sm-2 col-xl-2 col-2 price__input">
+            <input type="number" id="utt">
+          </div>
+          
+          <div class=" col-lg-2 col-md-2 col-sm-2 col-xl-2 col-2 price__input">
+            <input type="number" id="duu">
+          </div>
+                
+
+          <div class="col-xl-2 col-lg-3 col-2align-self-center" style="margin-top: 10px;">
+            <button class="btn bibik btn-danger" id="sen" style="font-size: 10px; ">
+               Искать
+            </button>  
+
+          </div>  
+        </div>
+      </div>
+
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-10">           
+            <div id="len" style="margin-top: 30px; color: #ec949d;">
+            </div> <!-- Внутри хрнотся количество найденыйх обектов -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="object__cards">
+     <div class="container">
+       <div class="row justify-content-center" id="so" style="margin-top: 50px;">
+        
+
+       </div>
+     </div>
+    </section>
+
+
+
+    <div class="footer">
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xl-2 xol-lg-6col-mg-6 col-6">Адрес</div>
+          <div class="col-xl-2 xol-lg-6col-mg-6 col-6">Связь с нами</div>
+        </div>
+        <div class="row adress d-flex justify-content-center">
+          <div class="col-xl-2 xol-lg-6col-mg-6 col-6">
+            Алтын, торговый центр
+            Кунаева проспект, 3Б
+            ​Аль-Фарабийский район, Шымкент
+          </div>
+          <div class="col-xl-2 col-lg-6col-mg-6 col-6 phones">
+            +7 701 555-24-78 <br>
+            +7 000 000-00-00 <br>
+            exemple@mail.ru
+          </div>
+        </div>
+      </div>
+    </div>
+                
+      <!-- //footer -->
+
+      
+
+      <!-- partial -->
+        
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js'></script>
+        <script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+        <script type="text/javascript">console.log('{%csrf_token%}')</script>
+        <!-- <script type="text/javascript" src="{%static 'js/pleasework.js'%}"></script> -->
+{%endblock%}

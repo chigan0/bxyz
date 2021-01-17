@@ -1,0 +1,83 @@
+{%extends 'left_headers.html'%}
+
+{%block content%}
+	{%load static%}
+	      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1 class="header__title animate__animated animate__fadeInDown">BARS</h1>
+              <p class="header__text">Мы поможем вам найти место что вы сможете назвать домом</p>
+              <a class="button res button_full" href="{% url 'reni' %}">НАШИ ПРЕДЛОЖЕНИЯ</a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <section>
+        <div class="container cin1">
+          <div class="row justify-content-between">
+            <div class="col-xl-5 col-lg-12 justify-content-center">
+              <p class="text">
+                Мы - это <br> <span>самый просто способ снять/продать/купить </span>
+              </p>
+            </div>
+            <div class="col-xl-5 col-lg-12 d-flex justify-content-center">
+              <img class="video__bg" src="{%static 'img/Video_bg.png'%}" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="description">
+        <div class="container">
+          <div class="row">
+            <div class="how_it_work col d-flex justify-content-center">
+              <p>Как это работает</p>
+            </div>
+          </div>
+          <div class="row d-flex justify-content-center">
+            <div class="col-xl-4 col-lg-5 col-md-6 justify-content-center">
+              <div class="card cardingpos" style="width: 350px; height: 250px;">
+                <img src="{%static 'img/Bp.png' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="lit">
+                <div class="ofer_title">Выберите 
+недвижимость</div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 col-md-6 justify-content-center">
+              <div class="card cardingpos" style="width: 350px; height: 250px;">
+                <img src="{%static 'img/ofer.png' %}" class="card-img-top" alt="...">
+              </div>
+              <div class="lit">
+                <div class="ofer_title">Свяжитесь <br>
+с ангетом</div>
+              </div>
+            </div>
+            <div class="col-xl-4 col-lg-5 col-md-6 justify-content-center">
+              <div class="card cardingpos" style="width: 350px; height: 250px;">
+                <img src="{%static 'img/uf.png'%}" class="card-img-top" alt="...">
+              </div>
+              <div class="lit">
+                <div class="ofer_title">Оформляйтесь</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="safe">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-xl-5 col-md-12 d-flex justify-content-center">
+              <p>
+              Будьте уверены в своей безопасности
+              </p>
+            </div>
+            <div class="col-xl-7 col-md-12 col-0 d-flex justify-content-center">
+              <img src="{%static 'img/photos.png'%}" alt="">
+            </div>
+          </div>
+        </div>
+      </section>
+
+    	<script src="{%static 'js/bootstrap.bundle.min.js'%}"></script>
+{%endblock%}

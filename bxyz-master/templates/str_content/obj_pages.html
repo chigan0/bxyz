@@ -1,0 +1,398 @@
+{%extends 'left_headers.html'%}
+
+<title>{%block title%}{{dw.name}}{%endblock%}</title>
+
+{%block content%}
+		
+		{%load static %}
+		<script src="{%static 'js/bootstrap.bundle.min.js' %}"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="{%static 'css/ob_pa.css'%}">
+		<p hidden="" id="ida">{{dw.id}}</p>
+		<p hidden="" id="typl">{{dw.typeOf}}</p>
+
+	            	      <img style="max-height: 854.55px; object-fit: cover;" id="imma" src="" class="d-block w-100" alt="...">
+	            	  <button id="left" style="border: none; background: none;" class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+	            	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+	            	    <span class="sr-only">Previous</span>
+	            	  </button>
+	            	  <button id="right" style="border: none; background: none;" class="carousel-control-next" href="#" role="button" data-slide="next"> 
+	            	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+	            	    <span class="sr-only">Next</span>
+	            	  </button>
+	            	
+	            	  <section>
+	            	  	<div class="container" style=" margin-top: 20px; margin-bottom: 20px ;font-family: 'Montserrat', sans-serif;">
+	            	  		<div class="row  d-flex justify-content-center">
+	            	  			<div class="col-3 wok" style="background: #fafafa; padding-top: 10px;">	
+	            	  				<div class="isaa">
+	            	  			</div>
+	            	  		</div>
+	            	  	</div>
+	            	  </section>
+					
+	            	  <!-- <div class="container">
+	            	  	<div style="background: #FaFaFa;">
+		            	  	<div class="container" style="background-size: #F2F2F2;">
+		            	  		<div class="row">
+		            	  			<ul style="
+		            	  			margin-top: 76px;
+		            	  			margin-left: 30px; font-weight: normal;
+	                                font-size: 20px;
+	                                line-height: 29px; 
+	                                font-family: 'Montserrat', sans-serif;"
+	                                class="list-group list-group-horizontal">
+		            	  			  <li class="street__object" >Улица: <span class="street__item">Кабанбай батыра</span></li>
+		            	  			  <li class="pledge_object" > В залоге: <span class="pledge_item">нет</span></li>
+		            	  			  <li class="material_object" > Материал стен: <span class="material_item"> кирпич </span> </li>
+		            	  			</ul>
+		            	  		</div>
+
+		            	  		<div class="row">
+		            	  			<ul style="
+		            	  			margin-top: 17px;
+		            	  			margin-left: 30px; font-weight: normal;
+	                                font-size: 20px;
+	                                line-height: 29px; 
+	                                font-family: 'Montserrat', sans-serif;"
+	                                class="list-group list-group-horizontal">
+		            	  			  <li class="sqr_object" >Площадь: <span class="sqr_item">60</span></li>
+		            	  			  <li class="room_object" > Количество комнат: <span class="room_item">нет</span></li>
+		            	  			  <li class="stage_object" > Этаж: <span class="stage_item"> 1 из 5 </span> </li>
+		            	  			</ul>
+		            	  		</div>
+
+		            	  		<div class="row" style="margin-top: 3px;">
+		            	  			<div class="col-12 title__object">Продажа 3-комнатной квартиры, 60 м, Кабанбай батыра проспек </div>
+		            	  		</div>
+
+		            	  		<div class="row" style="font-size: 30px; margin-left: 5px; margin-top: 33px;" >
+		            	  			<div class="col-3 price__object" >
+		            	  			    15 000 000  ₸
+		            	  			</div>
+
+		            	  		</div>
+		            	  		<div class="row" style="margin-left: 5px;">
+		            	  			
+		            	  		</div>
+		            	  	</div>
+		            	  </div> 	
+		            	  <div class="div" style="background:#fafafa;">
+		            	  	dsfdsjhgdsajkfhgskjfhgskjh
+		            	  </div> 	 	
+	            	  </div> -->
+
+
+
+
+
+
+
+					  <section>
+						<div class="container fill justify-content-center forpd">
+							<div class="row justify-content-center formd">
+								 <div class="col-4 str_obj obj">
+									 Улица:  <span> {{dw.cate}} </span>
+								 </div>
+								 <div class="col-2 fl_obj obj">
+									Этаж: <span> 1 из 5</span>
+								 </div>
+								 <div class="col-2 sqr_obj obj">
+									 Площадь: <span> {{dw.square}} </span>
+								 </div>
+							</div>
+							<div class="row justify-content-center ford">
+								<div class="col-4 plg_obj obj">
+									В залоге:  <span> {{dw.pledge}} </span>
+								</div>
+								<div class="col-2 rm_obj obj">
+								   Количество комнат: <span> {{dw.roomnumber}}</span>
+								</div>
+								<div class="col-2 wl_obj obj">
+									Материал стен: <span> {{dw.typwall}} </span>
+								</div>
+						   </div>
+						   <div class="row justify-content-center ford">
+								<div class="col-4 obj lvsqr_obj">
+									Жилая площадь:  <span> {{dw.residential}} </span>
+								</div>
+								<div class="col-2 hi_obj obj">
+								   Высота потолков: <span> {{dw.height}} </span>
+								</div>
+								<div class="col-2 yr_obj obj">
+									Год постройки: <span> {{dw.ye}} </span>
+								</div>
+						   </div>
+						   <div class="row justify-content-center">
+								<div class="col-10">
+									<div class="tit">
+										{{dw.name}}
+									</div>
+								</div>
+						   </div>
+						   <div class="row mlcop">
+								<div class="col-md-12 col-sm-12 col-12">
+									<div class="pr">
+										{{dw.price}}  ₸  			<!-- ₸ не удалять -->
+									</div>
+								</div>
+						   </div>
+						   <div class="row justify-content-center">
+							   <div class="col-10">
+								   <div class="desk">
+										Не угловая, кладовая, домофон, застекленный балкон, лоджия, СРОЧНО.
+								   </div>
+							   </div>
+						   </div>
+				
+						   <div class="row justify-content-center">
+							   <div class="col-10">
+								   <div class="ci">
+										г. Шымкент
+								   </div>
+							   </div>
+						   </div>
+						   <div class="row justify-content-center">
+							   <div class="col-10">
+								   <div class="ript">
+								   		{{dw.opis}}
+								   </div>
+							   </div>
+						   </div>
+						</div>
+					</section>
+					<section>
+						<div class="container fill mip">
+							<div class="row justify-content-center">
+								<div class="col-12 col-sm-2 rou">
+									<img src="" alt="">
+								</div>
+								<div class="col-8 wh ">
+									{%if dw.typeOf == 'apartament'%}
+										<a href="tel:{{dw.number}}" class="tr"> {{dw.number}} </a>
+										<br>
+									{%elif dw.typeOf == 'house'%}
+									<a href="tel:{{dw.number}}" class="tr"> {{dw.phonnum}} </a>
+										<br>
+										
+									{%endif%}
+									<div class="nam">
+										{{dw.rename}}
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+
+
+
+	            	  <!-- <div class="container" style="display: inline;">
+	            	  	<div class="container ">
+	            	  		<div>
+	            	  			<div class="row justify-content-between">
+		            	  			<div class="col-12 col-sm-8"  style="background: #fafafa;">
+		            	  					<ul style="
+		            	  					
+		            	  					margin-left: 25px; font-weight: normal;
+		            	  					font-size: 18px;
+		            	  					line-height: 29px; 
+		            	  					font-family: 'Montserrat', sans-serif;"
+		            	  					class="list-group list-group-horizontal hori">
+		            	  					<li class="street__object" >Улица: <span class="street__item">{{dw.cate}}</span></li>
+		            	  					<li class="pledge_object" > В залоге: <span class="pledge_item">{{dw.pledge}}</span></li>
+		            	  					<li class="material_object" > Материал стен: <span class="material_item"> {{dw.typwall}} </span> </li>
+		            	  					</ul>
+		            	  			</div>
+		            	  			<div class="col-3 justify-content-center hiddenmaiden" style="background: #fafafa;" >
+		            	  				<img src="/media/defa.jpg" alt="" class="round">
+		            	  			</div>
+	            	  			</div>
+		            	  		<div class="row justify-content-between ba skin">
+		            	  			<div class="col-12 col-sm-8" style="background: #fafafa;">
+			            	  			<ul
+		                                class="hope list-group list-group-horizontal">
+			            	  			  <li class="sqr_object" >Площадь: <span class="sqr_item">{{dw.square}}</span></li>
+			            	  			  {%if dw.typeOf == 'house'%}
+			            	  			  	<li class="room_object" > Количество комнат: <span class="room_item">{{dw.roomnumber}}</span></li>
+			            	  			  {%elif dw.typeOf == 'apartament'%}
+			            	  			  	<li class="room_object" > Количество комнат: <span class="room_item">{{dw.roomnum}}</span></li>
+			            	  			  {%endif%}
+
+											{%if dw.typeOf == 'apartament'%}
+												<li class="stage_object" > Этаж: <span class="stage_item">{{dw.aparroom}} из {{dw.kolrroom}} </span> </li>
+											{%elif dw.typeOf == 'house'%}
+												<li class="stage_object" > Количество этажей: <span class="stage_item">{{dw.roomnum}}</span> </li>
+			            	  			  {%endif%}
+			            	  			</ul>
+			            	  		</div>
+			            	  		<div class="col-3 namecol" style="background: #fafafa;">
+			            	  			<p class="realname">{{dw.rename}}</p>
+			            	  		</div>
+			            	  	</div>
+			            	  	<div class="row justify-content-between baba" >
+		            	  			<div class="col-sm-8 col-12 title__object hopeless" style="background: #fafafa; ">{{dw.name}}</div>
+		            	  			<div class="col-3 wokwok" style="background: #fafafa;">
+		            	  				<a class="telephone" href="tel:" style="color: #000; ">{{dw.number}}</a>
+		            	  			</div>
+		            	  		</div>
+		            	  			
+		            	  		<div class="row" style=" "  >
+		            	  			<div class="col-sm-8 col-sm-8 price__object" style="background: #fafafa; font-size: 30px; padding-left: 40px; margin-top: -126px;" >
+		            	  			    {{dw.price}}₸
+		            	  			</div>
+
+		            	  		</div>
+		            	  		<div class="row justify-content-between">
+		            	  			<div class="col-12 col-sm-8 city__object" style="background: #fafafa; margin-top: -80px;">
+		            	  			    г. Шымкент
+		            	  			</div>
+		            	  		</div>
+		            	  		<div class="row justify-content-between">
+		            	  		    <div class="col-12 col-sm-8 offer__title" style="background: #fafafa; margin-bottom: 99px; padding-bottom: 76px;">
+		            	  		     <p style="text-align: justify; padding-right: 38px;">
+		            	  		     	{{dw.opis}}
+		            	  		     </p> 
+		            	  		    </div>
+		            	  		</div>
+	            	  		</div>
+	            	  		
+	            	  	</div>
+	            	  </div> -->
+
+
+
+
+
+
+
+
+		            	  
+			<!-- <div class="header__two">
+			    <div class="container justify-content-center">
+			        <div class="container__for__objects" style="border: 5px solid #fafafa; padding: 20px; border-radius: 5px;">
+			              <div class="row">
+			            <div class="col-3 price__object" >
+			                15 000 000  ₸
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-2 city__object">
+			                г. Шымкент
+			            </div>
+			           
+			        </div>
+			        <div class="row">
+			            <div class="col-4 strong street__object">
+			                <strong>
+			                    Улица
+			                </strong> 
+			            </div>
+			            <div class="col-2 subtitle">
+			                Кабанбай батыра
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-4 strong street__object">
+			                <strong>
+			                    Количество комнат
+			                </strong> 
+			            </div>
+			            <div class="col-2 subtitle">
+			                3
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-4 strong street__object">
+			                <strong>
+			                    Этаж
+			                </strong> 
+			            </div>
+			            <div class="col-2 subtitle">
+			               1 из 5
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-4 strong street__object">
+			                <strong>
+			                    Площадь
+			                </strong> 
+			            </div>
+			            <div class="col-2 subtitle">
+			                60  
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-4 strong street__object">
+			                <strong>
+			                    Материал стен
+			                </strong> 
+			            </div>
+			            <div class="col-2 subtitle">
+			                кирпич
+			            </div>
+			        </div>
+			        <div class="row">
+			            <div class="col-4 strong street__object">
+			                <strong>
+			                    В залоге    
+			                </strong> 
+			            </div>
+			            <div class="col-2 subtitle">
+			                нет
+			            </div>
+			        </div>
+			        </div>
+			      
+			          <div class="row">
+			              <div class="col-10 offer__title">
+			                не угловая, кладовая, домофон, застекленный балкон, лоджия, СРОЧНО.
+			              </div>
+			          </div>
+			          <div class="row">
+			              <div class="col-10 descriptio__title">
+			                Предлагаем вашему вниманию квартиру расположенную в спальном районе с 
+			                развитой инфраструктурой. В шаговой доступности расположены школы, детские
+			                 сады, магазины, ЖД вокзал, парковые зоны. В стоимость входит также гараж. 
+			                Возможен торг.
+			              </div>
+			          </div>
+			    </div>
+			</div> -->
+
+	            	<script>
+	            		var im = [];
+	            		console.log("/"+$("#typl").text()+"/get_img/"+$("#ida").text()+"/")
+						$.getJSON("/"+$("#typl").text()+"/get_img/"+$("#ida").text()+"/",(response)=>{
+							for(let i in response){
+								im.push("/media/"+response[i].img)
+							}
+
+							$('.isaa').html('<p id="is">'+String(1)+' из '+String(im.length)+'</p')
+							$("#imma").attr("src",im[0]);
+						})
+
+						function sliden(arr){
+							let a = 0
+
+							$("#right").on("click",()=>{
+								if (a>-1 && a<arr.length-1)
+									(a++,$("#imma").attr("src",arr[a]));
+								else if (a === arr.length-1)
+									(a=arr.length-1-a,$("#imma").attr("src",arr[a]));
+								$("#is").text(String(a+1)+' из '+String(arr.length));
+							})	
+							$("#left").on("click",()=>{
+								if (a>-1 && a!=0) 
+									(a--,$("#imma").attr("src",arr[a]));
+								else if (a == 0)
+									(a=arr.length-1,$("#imma").attr("src",arr[a]));
+								$("#is").text(String(a+1)+' из '+String(arr.length));
+							
+							})	
+						}
+						sliden(im)
+					</script>
+	            
+	   
+	
+{%endblock%}

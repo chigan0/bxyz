@@ -1,0 +1,141 @@
+<style>
+					 
+					
+
+					
+					section.alert
+					{
+						overflow: hidden;
+						padding-bottom: 0;
+						background: #fafafa;
+						margin-bottom: 0;
+					}
+
+					.adress
+					{
+					  font-family: 'Lato', sans-serif;
+					  font-style: normal;
+					  font-weight: normal;
+					  font-size: 12px;
+					  line-height: 150%;
+					  margin-top: 33px;
+					}
+
+					.lco
+					{
+					  background: #b13140;
+					}
+
+					.header__two
+					{
+						margin-top: 78px;
+					}
+
+					.title__object
+					{	
+						font-family: 'Montserrat', sans-serif;"
+						margin-top: 52px;
+					}
+
+					.price__object
+					{
+						font-family: 'Montserrat', sans-serif;"
+						font-size: 46px;
+						line-height: 44px;
+					}
+
+					.city__object
+					{	
+						font-family: 'Montserrat', sans-serif;"
+						font-style: normal;
+						font-weight: normal;
+						font-size: 20px;
+						line-height: 29px;
+						padding-top: 22px;
+						padding-left: 38px;	
+					}
+
+					.loh input
+					{
+						margin-top: 12px;
+						border: solid 1px #dad7d7;
+						border-radius: 4px;
+					}
+
+					.bg-danger
+					{
+					  background-color:#b13140; 
+					}
+
+
+					#sen
+					{
+						width: 100px;
+					}
+
+					.subtitle
+					{
+						font-weight: 500;
+						font-size: 24px;
+						line-height: 29px;
+					}
+
+					.strong
+					{
+						font-weight: 500;
+						font-size: 24px;
+						line-height: 29px;
+						margin-bottom: 35px;
+					}
+
+					@media (max-width: 991px) 
+
+					{
+					  .filters
+					  {
+					    height: 140px;
+					  }
+
+					  #sen
+					  {
+						  margin-left: 16px;
+						  width: 100px;
+					  }
+					}
+
+					.offer__title
+					{
+						font-size: 20px;
+						line-height: 29px;
+						padding-top: 22px;
+						padding-bottom: 22px;
+						padding-left: 38px;
+						font-family: 'Montserrat', sans-serif;
+
+					}
+
+					.descriptio__title
+					{
+						border: #fafafa solid 5px;
+						padding: 20px;
+						border-radius: 5px;
+						font-size: 24px;
+					line-height: 29px;
+					letter-spacing: -0.025em;
+					margin-bottom: 60px;	
+					}
+
+						/* .why
+						{
+							font-family: 'Lato', sans-serif;
+							text-align: center;
+							color: white;
+							background-size: cover;
+							background-position: 0 100%;
+							background-image: url(../img/Bg.svg);
+							margin-top: -98px;
+							padding-top: 278px;
+							padding-bottom: 181px;	
+							margin-top: 0px;	
+						} */s
+				</style>
