@@ -1,7 +1,7 @@
 from grkm.views import *
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
-from grkm.models import Add
+from grkm.models import Add,UserPng
 from .models import House,Imah
 from django.contrib import messages
 from django.views import View
@@ -41,8 +41,9 @@ class Reth(View):
 	def get(self,request,id):
 		try:
 			houseid = House.objects.get(id=id)
+
 			return render(request, 'str_content/obj_pages.html', context={
-					'dw' : houseid,
+					'dw' : houseid,'img':UserPng.objects.filter(user=houseid.rename).values('img')[0]
 				})
 		except Exception as e:
 			print(e)

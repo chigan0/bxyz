@@ -2,6 +2,7 @@ from django.utils import timezone
 from django.db import models
 from grkm.models import Add
 from datetime import datetime
+from django.contrib.auth.models import User
 
 #Общая площадь,50 м² высота потолков тип строения кирпич
 class House(models.Model):
@@ -21,7 +22,7 @@ class House(models.Model):
 	opis = models.TextField('Описания',max_length=50000,default='Отсутствует',blank=False,db_index=True)
 	price = models.IntegerField('Цена в Tг',default=3800000,blank=False)
 	phonnum = models.CharField('Номер Риэлтора',max_length=15,blank=False,default='+77776907855')
-	rename = models.CharField('Имя Риэлтора',max_length=10,blank=True,default='Кира')
+	rename = models.ForeignKey(User, on_delete=models.CASCADE, null=True,)
 	typeOf = models.CharField(max_length=8,default="house")
 	pub_date = models.DateTimeField(default=timezone.now)
 	typ = models.CharField('Категория для объекта',max_length=20,choices=[(fr, 'Покупка'),(fif, 'Аренда')],default=fr)

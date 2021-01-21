@@ -1,6 +1,7 @@
 from django.db import models
 from grkm.models import Add
 from django.utils import timezone
+from django.contrib.auth.models import User
 
 class Apartments(models.Model):
 	fr,fif = 'Покупка','Аренда'
@@ -22,7 +23,7 @@ class Apartments(models.Model):
 	gps = models.CharField('Адрес для Риэлтора',max_length=100,blank=False)
 	opis = models.TextField('Описания объекта',max_length=500,blank=False,db_index=True,default="Отсутствует")
 	number = models.CharField('Номер Риэлтора',max_length=100,blank=False,default='+77776907855')
-	rename = models.CharField('Имя Риэлтора',max_length=10,blank=True,default='Кира')
+	rename = models.ForeignKey(User, on_delete=models.CASCADE, null=True,)
 	pub_date = models.DateField(default=timezone.now)
 	typeOf = models.CharField(max_length=13,default='apartament')
 	typ = models.CharField('Категория для объекта',max_length=20,choices=[(fr, 'Покупка'),(fif, 'Аренда')],default=fr)

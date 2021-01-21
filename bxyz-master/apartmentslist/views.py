@@ -1,7 +1,7 @@
 from grkm.views import pimg
 from django.shortcuts import render
 from django.http import HttpResponse,JsonResponse
-from grkm.models import Add
+from grkm.models import Add,UserPng
 from .models import Apartments,Imah
 from django.views.generic import TemplateView
 from datetime import datetime
@@ -41,7 +41,8 @@ class ApartSend(TemplateView):
 	def get(self,request,id):
 		try:
 			obj = Apartments.objects.get(id=id)
-			context = {'dw' : obj}
+
+			context = {'dw' : obj,'img':UserPng.objects.filter(user=obj.rename).values('img')[0]}
 			return render(request, 'str_content/obj_pages.html', context)
 		
 		except Exception as e:

@@ -165,7 +165,9 @@
 						<div class="container fill mip">
 							<div class="row justify-content-center">
 								<div class="col-12 col-sm-2 rou">
-									<img src="" alt="">
+									
+									<img src="/media/{{img.img}}" alt="">
+									
 								</div>
 								<div class="col-8 wh ">
 									{%if dw.typeOf == 'apartament'%}
@@ -367,30 +369,40 @@
 								im.push("/media/"+response[i].img)
 							}
 
-							$('.isaa').html('<p id="is">'+String(1)+' из '+String(im.length)+'</p')
-							$("#imma").attr("src",im[0]);
+							
+
+							if (im.length == 0) {
+								$("#imma").attr("src",'/media/image_not.png');
+								$('.isaa').html('<p id="is">'+String(1)+' из 1</p')
+
+							}else{ 
+								$("#imma").attr("src",im[0]);
+								$('.isaa').html('<p id="is">'+String(1)+' из '+String(im.length)+'</p')
+
+								sliden(im)
+							}
 						})
 
 						function sliden(arr){
-							let a = 0
-
-							$("#right").on("click",()=>{
-								if (a>-1 && a<arr.length-1)
-									(a++,$("#imma").attr("src",arr[a]));
-								else if (a === arr.length-1)
-									(a=arr.length-1-a,$("#imma").attr("src",arr[a]));
-								$("#is").text(String(a+1)+' из '+String(arr.length));
-							})	
-							$("#left").on("click",()=>{
-								if (a>-1 && a!=0) 
-									(a--,$("#imma").attr("src",arr[a]));
-								else if (a == 0)
-									(a=arr.length-1,$("#imma").attr("src",arr[a]));
-								$("#is").text(String(a+1)+' из '+String(arr.length));
+					
 							
-							})	
+								let a = 0
+								$("#right").on("click",()=>{
+									if (a>-1 && a<arr.length-1)
+										(a++,$("#imma").attr("src",arr[a]));
+									else if (a === arr.length-1)
+										(a=arr.length-1-a,$("#imma").attr("src",arr[a]));
+									$("#is").text(String(a+1)+' из '+String(arr.length));
+								})	
+								$("#left").on("click",()=>{
+									if (a>-1 && a!=0) 
+										(a--,$("#imma").attr("src",arr[a]));
+									else if (a == 0)
+										(a=arr.length-1,$("#imma").attr("src",arr[a]));
+									$("#is").text(String(a+1)+' из '+String(arr.length));
+								})
 						}
-						sliden(im)
+						
 					</script>
 	            
 	   

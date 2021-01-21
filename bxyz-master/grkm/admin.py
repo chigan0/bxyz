@@ -3,12 +3,17 @@ from .models import Add
 from houselist.models import House
 from houselist.models import Imah as on
 from apartmentslist.models import Apartments,Imah
+from grkm.models import UserPng
 
 class InlineImah(admin.TabularInline):
 	model = on
 
 class Dar(admin.TabularInline):
 	model = Imah
+
+@admin.register(UserPng)
+class UserPngAdmin(admin.ModelAdmin):
+	pass
 
 @admin.register(Add)
 class AddAdmin(admin.ModelAdmin):
